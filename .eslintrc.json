@@ -18,9 +18,8 @@
   "ignorePatterns": ["commitlint.config.ts"],
   "rules": {
     "prefer-arrow-callback": "off",
-    "func-style": ["error", "declaration"],
     "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "double"],
+    "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "no-unused-vars": "error"
   }
