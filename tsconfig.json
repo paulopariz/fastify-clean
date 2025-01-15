@@ -1,4 +1,3 @@
-
 {
   "compilerOptions": {
     "target": "es2017",
@@ -9,5 +8,6 @@
     "skipLibCheck": true,
     "rootDir": "./src",
     "outDir": "./build",
+    "experimentalDecorators": true
   }
 }

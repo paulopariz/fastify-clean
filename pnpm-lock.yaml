@@ -17,6 +17,9 @@ importers:
       fastify:
         specifier: ^5.2.1
         version: 5.2.1
+      fastify-decorators:
+        specifier: ^3.16.1
+        version: 3.16.1(@types/node@22.10.6)(fastify@5.2.1)
       prisma:
         specifier: ^6.2.1
         version: 6.2.1
@@ -42,9 +45,6 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^7.4.0
         version: 7.18.0(eslint@8.57.1)(typescript@5.7.3)
-      commitlint-plugin-function-rules:
-        specifier: ^4.0.0
-        version: 4.0.1(@commitlint/lint@19.6.0)
       eslint:
         specifier: ^8.57.0
         version: 8.57.1
@@ -525,12 +525,6 @@ packages:
     resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
     engines: {node: '>=18'}
 
-  commitlint-plugin-function-rules@4.0.1:
-    resolution: {integrity: sha512-q3zniafaRo41x0eatCCe1ai9Tge4ArK4Mc5rVXTCtj6D9s0unxYpCnFiyLVOpKyz8za78qlZacCHTErvHnU+dw==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      '@commitlint/lint': '>=19 <20'
-
   compare-func@2.0.0:
     resolution: {integrity: sha512-zHig5N+tPWARooBnb0Zx1MFcdfpyJrfTJ3Y5L+IFvUm8rM74hHz66z0gw0x4tijh5CorKkKUCnW82R2vmpeCRA==}
 
@@ -713,6 +707,16 @@ packages:
 
   fast-uri@3.0.5:
     resolution: {integrity: sha512-5JnBCWpFlMo0a3ciDy/JckMzzv1U9coZrIhedq+HXxxUfDTAiS0LA8OKVao4G9BxmCVck/jtA5r3KAtRWEyD8Q==}
+
+  fastify-decorators@3.16.1:
+    resolution: {integrity: sha512-f4VPgB126g1PIvjx8zZabXviWUngz9xKsfmw9DxvWkJ0ycrbnDY+mivJ6qtDHCcJqyBg26fgunzNCBK/j8nbhw==}
+    engines: {node: '>= 10.16.0'}
+    peerDependencies:
+      '@types/node': '*'
+      fastify: ^3.0.1 || ^4.0.0 || ^5.0.0
+
+  fastify-plugin@4.5.1:
+    resolution: {integrity: sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==}
 
   fastify-plugin@5.0.1:
     resolution: {integrity: sha512-HCxs+YnRaWzCl+cWRYFnHmeRFyR5GVnJTAaCJQiYzQSDwK9MgJdyAsuL3nh0EWRCYMgQ5MeziymvmAhUHYHDUQ==}
@@ -1979,10 +1983,6 @@ snapshots:
 
   commander@12.1.0: {}
 
-  commitlint-plugin-function-rules@4.0.1(@commitlint/lint@19.6.0):
-    dependencies:
-      '@commitlint/lint': 19.6.0
-
   compare-func@2.0.0:
     dependencies:
       array-ify: 1.0.0
@@ -2190,6 +2190,14 @@ snapshots:
   fast-uri@2.4.0: {}
 
   fast-uri@3.0.5: {}
+
+  fastify-decorators@3.16.1(@types/node@22.10.6)(fastify@5.2.1):
+    dependencies:
+      '@types/node': 22.10.6
+      fastify: 5.2.1
+      fastify-plugin: 4.5.1
+
+  fastify-plugin@4.5.1: {}
 
   fastify-plugin@5.0.1: {}
 

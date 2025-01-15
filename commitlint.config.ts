@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['@commitlint/config-conventional'],
-  plugins: ['commitlint-plugin-function-rules'],
+  plugins: [''],
   rules: {
     'header-max-length': [0],
     'function-rules/header-max-length': [
