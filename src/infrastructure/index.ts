@@ -1,6 +1,6 @@
 import fastify from 'fastify';
-import { registerCors } from '../infra/cors';
-import { registerRoutes } from '../infra/routes';
+import { registerCors } from './cors';
+import { registerRoutes } from './routes';
 
 export const startServer = async () => {
   const app = fastify();

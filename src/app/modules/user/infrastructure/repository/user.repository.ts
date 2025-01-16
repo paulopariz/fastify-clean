@@ -1,4 +1,4 @@
-import { prisma } from '../../../../infra/prisma';
+import { prisma } from '../../../../../infrastructure/prisma';
 import { CreateUserDTO } from '../../domain/dto/create-user-service.dto';
 import { UserRepositoryInterface } from '../../domain/interfaces/repository/user.repository.interface';
 

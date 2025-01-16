@@ -4,7 +4,7 @@ import { resolve } from 'path';
 
 export const registerRoutes = async (app: FastifyInstance) => {
   await app.register(bootstrap, {
-    directory: resolve(__dirname, '../modules'),
+    directory: resolve(__dirname, '../app/modules'),
     mask: /\.controller\.(t|j)s$/,
   });
 };
