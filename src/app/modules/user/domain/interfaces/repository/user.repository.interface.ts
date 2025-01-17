@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { CreateUserDTO } from '../../dto/create-user-service.dto';
+import { CreateUserDTO } from '../../dto/create-user.dto';
 
 export abstract class UserRepositoryInterface {
-  abstract create(data: CreateUserDTO): Promise<{ user: CreateUserDTO }>;
+  abstract create(data: CreateUserDTO): Promise<CreateUserDTO>;
 }

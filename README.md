@@ -117,7 +117,7 @@ O projeto oferece suporte para rodar em **Docker**. Com o **Docker Compose**, vo
 
 ## Scripts
 
-- `pnpm dev`: Inicia o servidor em modo de desenvolvimento com **ts-node**.
+- `pnpm dev`: Inicia o servidor em modo de desenvolvimento.
 - `npx prisma migrate dev`: Aplica as migrações no banco de dados.
 - `npx prisma generate`: Gera o cliente Prisma após alterações no modelo.
 - `npx prisma studio`: Abre o modo de visualizar o banco de dados.
