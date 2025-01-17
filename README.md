@@ -23,7 +23,7 @@ API construída com **Fastify** (Node.js), **Prisma** (para ORM), e **Zod** (par
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/paulopariz/clean-fastify.git
+   git clone https://github.com/paulopariz/fastify-clean
    ```
 
 2. Acesse o diretório do projeto:
