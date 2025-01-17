@@ -3,8 +3,6 @@
 
 API construída com **Fastify** (Node.js), **Prisma** (para ORM), e **Zod** (para validação de dados). O projeto é desenvolvido em **TypeScript**.
 
-## Índice
-
 - [Instalação](#instalação)
 - [Usando o Docker Compose](#usando-o-docker-compose)
 - [Configuração do Prisma](#configuração-do-prisma)
