@@ -4,6 +4,7 @@
 API construída com **Fastify** (Node.js), **Prisma** (para ORM), e **Zod** (para validação de dados). O projeto é desenvolvido em **TypeScript**.
 
 - [Instalação](#instalação)
+- [Configuração do .ENV](#configuração-do-env)
 - [Usando o Docker Compose](#usando-o-docker-compose)
 - [Configuração do Prisma](#configuração-do-prisma)
 - [Rodando a API](#rodando-a-api)
@@ -37,6 +38,15 @@ API construída com **Fastify** (Node.js), **Prisma** (para ORM), e **Zod** (par
    ```
 
 ---
+
+## Configuração do .ENV
+
+Para configurar a aplicação, crie um arquivo `.env` na raiz do projeto com os seguintes parâmetros:
+
+```env
+PORT=3333
+DATABASE_URL="postgresql://user_fast:123456@localhost:5432/db_fast"
+```
 
 ## Usando o Docker Compose
 
