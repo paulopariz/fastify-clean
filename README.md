@@ -6,9 +6,9 @@ API construída com **Fastify** (Node.js), **Prisma** (para ORM), e **Zod** (par
 ## Índice
 
 - [Instalação](#instalação)
-- [Rodando a API](#rodando-a-api)
 - [Usando o Docker Compose](#usando-o-docker-compose)
 - [Configuração do Prisma](#configuração-do-prisma)
+- [Rodando a API](#rodando-a-api)
 - [Scripts](#scripts)
 
 ## Instalação
@@ -40,46 +40,25 @@ API construída com **Fastify** (Node.js), **Prisma** (para ORM), e **Zod** (par
 
 ---
 
-## Rodando a API
-
-Para rodar o projeto localmente.
-
-1. Inicie o servidor com o comando:
-
-   ```bash
-   pnpm dev
-   ```
-
-   Isso irá rodar o servidor  em modo de desenvolvimento. O servidor estará rodando na porta padrão (geralmente `3333`).
-
-2. Acesse a API no navegador ou via **Postman**/**Insomnia**:
-
-   ```bash
-   http://localhost:3333
-   ```   
----
-
 ## Usando o Docker Compose
 
-O projeto oferece suporte para rodar em **Docker**. Com o **Docker Compose**, você pode configurar o ambiente de desenvolvimento completo, incluindo banco de dados e outros serviços.
+O projeto oferece suporte para rodar um banco de dados PostgreSQL em um container Docker utilizando o **Docker Compose**.
 
-### Passos para rodar com Docker Compose:
+### Passos para rodar o banco de dados com Docker Compose:
 
 1. Certifique-se de que o **Docker** e o **Docker Compose** estão instalados em seu ambiente.
 
-2. No diretório do projeto, execute o seguinte comando para subir os containers:
+2. No diretório do projeto, execute o seguinte comando para subir o container do banco de dados:
 
    ```bash
    docker-compose up --build
    ```
 
    Isso irá:
-   - Criar e rodar os containers necessários (como o banco de dados e o servidor da API).
-   - Criar um banco de dados conforme a configuração no Docker Compose.
-   
-3. Após o processo de build e inicialização, você poderá acessar a API normalmente em `http://localhost:3000`.
+   - Criar e rodar o container para o banco de dados PostgreSQL.
+   - Configurar o banco de dados conforme a configuração no arquivo `docker-compose.yml`.
 
-4. Para parar os containers, execute:
+3. Para parar o container do banco de dados, execute:
 
    ```bash
    docker-compose down
@@ -113,6 +92,25 @@ O projeto oferece suporte para rodar em **Docker**. Com o **Docker Compose**, vo
 
 5. Agora o Prisma estará pronto para ser utilizado na aplicação!
 
+---
+
+## Rodando a API
+
+Para rodar o projeto localmente.
+
+1. Inicie o servidor com o comando:
+
+   ```bash
+   pnpm dev
+   ```
+
+   Isso irá rodar o servidor em modo de desenvolvimento. O servidor estará rodando na porta padrão (geralmente `3333`).
+
+2. Acesse a API no navegador ou via **Postman**/**Insomnia**:
+
+   ```bash
+   http://localhost:3333
+   ```   
 ---
 
 ## Scripts
