@@ -1,20 +1,20 @@
 import { Inject, Service } from 'fastify-decorators';
-import { UserCreateServiceInterface } from '../../domain/interfaces/services/user-create-service.interface';
+import { UserUpdateServiceInterface } from '../../domain/interfaces/services/user-update-service.interface';
 import { UserRepository } from '../../infrastructure/repository/user.repository';
-import { UserCreateDTO } from '../../domain/dto/user-create.dto';
+import { UserUpdateDTO } from '../../domain/dto/user-update.dto';
 import { UserCheckDuplicateEmailUseCase } from '../../use-case/user-check-duplicate-email.use-case';
 
 @Service()
-export class UserCreateService implements UserCreateServiceInterface {
+export class UserUpdateService implements UserUpdateServiceInterface {
   @Inject(UserRepository)
   userRepository!: UserRepository;
 
   @Inject(UserCheckDuplicateEmailUseCase)
   userCheckDuplicateEmailUseCase!: UserCheckDuplicateEmailUseCase;
 
-  async execute(user: UserCreateDTO): Promise<UserCreateDTO> {
+  async execute(id: number, user: UserUpdateDTO): Promise<UserUpdateDTO> {
     await this.userCheckDuplicateEmailUseCase.execute(user.email);
 
-    return this.userRepository.create(user);
+    return this.userRepository.update(id, user);
   }
 }

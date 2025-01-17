@@ -1,18 +1,31 @@
 import { Service } from 'fastify-decorators';
 import { prisma } from '../../../../../infrastructure/prisma';
-import { CreateUserDTO } from '../../domain/dto/create-user.dto';
-import { UserRepositoryInterface } from '../../domain/interfaces/repository/user.repository.interface';
+
 import { User } from '@prisma/client';
+
+import { UserCreateDTO } from '../../domain/dto/user-create.dto';
+import { UserUpdateDTO } from '../../domain/dto/user-update.dto';
+
+import { UserRepositoryInterface } from '../../domain/interfaces/repository/user.repository.interface';
 
 @Service()
 export class UserRepository implements UserRepositoryInterface {
-  async create(data: CreateUserDTO): Promise<CreateUserDTO> {
+  async findAll(): Promise<User[]> {
+    return prisma.user.findMany();
+  }
+
+  async create(data: UserCreateDTO): Promise<UserCreateDTO> {
     return prisma.user.create({
       data,
     });
   }
 
-  async findAll(): Promise<User[]> {
-    return prisma.user.findMany();
+  async update(id: number, data: UserUpdateDTO): Promise<UserUpdateDTO> {
+    return prisma.user.update({
+      where: {
+        id,
+      },
+      data,
+    });
   }
 }
