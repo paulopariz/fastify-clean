@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import { User } from '@prisma/client';
-
-import { UserCreateDTO } from '../../dto/user-create.dto';
-import { UserUpdateDTO } from '../../dto/user-update.dto';
+import { UserCreateDTO, UserUpdateDTO } from '../../dto';
+import { UserEntity } from '../../entity/user.entity';
 
 export abstract class UserRepositoryInterface {
-  abstract findAll(): Promise<User[]>;
+  abstract findAll(): Promise<UserEntity[]>;
+  abstract findId(id: number): Promise<UserEntity>;
   abstract create(data: UserCreateDTO): Promise<UserCreateDTO>;
   abstract update(id: number, data: UserUpdateDTO): Promise<UserUpdateDTO>;
+  abstract delete(id: number): Promise<UserEntity>;
 }

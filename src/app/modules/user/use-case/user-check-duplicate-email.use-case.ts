@@ -4,7 +4,7 @@ import { ConflictError } from 'http-errors-enhanced';
 
 @Service()
 export class UserCheckDuplicateEmailUseCase {
-  async execute(email: string) {
+  async execute(email: string): Promise<void> {
     const user = await prisma.user.findUnique({
       where: {
         email,
@@ -12,7 +12,5 @@ export class UserCheckDuplicateEmailUseCase {
     });
 
     if (user) throw new ConflictError('User already exists.');
-
-    return null;
   }
 }
