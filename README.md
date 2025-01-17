@@ -29,7 +29,7 @@ API construída com **Fastify** (Node.js), **Prisma** (para ORM), e **Zod** (par
 2. Acesse o diretório do projeto:
 
    ```bash
-   cd clean-fastify
+   cd fastify-clean
    ```
 
 3. Instale as dependências do projeto utilizando o `pnpm`:
