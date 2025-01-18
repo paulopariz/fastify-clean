@@ -1,5 +1,5 @@
 
-# Clean Fastify API (Em desenvolvimento ⚠️)
+# Clean Fastify API
 
 API construída com **Fastify** (Node.js), **Prisma** (para ORM), e **Zod** (para validação de dados). O projeto é desenvolvido em **TypeScript**.
 
