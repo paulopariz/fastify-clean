@@ -5,7 +5,7 @@ import { UserEntity } from '../../entity/user.entity';
 export abstract class UserRepositoryInterface {
   abstract findAll(): Promise<UserEntity[]>;
   abstract findId(id: number): Promise<UserEntity>;
-  abstract create(data: UserCreateDTO): Promise<UserCreateDTO>;
-  abstract update(id: number, data: UserUpdateDTO): Promise<UserUpdateDTO>;
+  abstract create(data: UserCreateDTO): Promise<UserEntity>;
+  abstract update(id: number, data: UserUpdateDTO): Promise<UserEntity>;
   abstract delete(id: number): Promise<UserEntity>;
 }

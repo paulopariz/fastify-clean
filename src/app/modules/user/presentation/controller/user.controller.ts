@@ -40,12 +40,12 @@ export default class UserController {
   async findId(
     req: FastifyRequest<{ Params: { id: string } }>,
   ): Promise<UserEntity> {
-    const id = parseInt(req.params.id);
-    return this.userFindIdService.execute(id);
+    const { id } = req.params;
+    return this.userFindIdService.execute(Number(id));
   }
 
   @POST('/', { schema: { body: zodToJsonSchema(UserCreateDTO) } })
-  async create(req: FastifyRequest): Promise<UserCreateDTO> {
+  async create(req: FastifyRequest): Promise<UserEntity> {
     const user = req.body as UserCreateDTO;
     return this.userCreateService.execute(user);
   }
@@ -53,20 +53,20 @@ export default class UserController {
   @PUT('/:id', { schema: { body: zodToJsonSchema(UserUpdateDTO) } })
   async update(
     req: FastifyRequest<{ Params: { id: string } }>,
-  ): Promise<UserUpdateDTO> {
-    const userId = parseInt(req.params.id);
+  ): Promise<UserEntity> {
+    const { id } = req.params;
     const user = req.body as UserUpdateDTO;
 
-    return this.userUpdateService.execute(userId, user);
+    return this.userUpdateService.execute(Number(id), user);
   }
 
   @DELETE('/:id')
   async delete(
     req: FastifyRequest<{ Params: { id: string } }>,
   ): Promise<{ success: boolean }> {
-    const id = parseInt(req.params.id);
+    const { id } = req.params;
 
-    await this.userDeleteService.execute(id);
+    await this.userDeleteService.execute(Number(id));
 
     return { success: true };
   }

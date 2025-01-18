@@ -8,6 +8,7 @@ import {
   UserCheckDuplicateEmailUseCase,
   UserIdExistsUseCase,
 } from '../../use-case';
+import { UserEntity } from '../../domain/entity/user.entity';
 
 @Service()
 export class UserUpdateService implements UserUpdateServiceInterface {
@@ -20,7 +21,7 @@ export class UserUpdateService implements UserUpdateServiceInterface {
   @Inject(UserIdExistsUseCase)
   private readonly userIdExistsUseCase!: UserIdExistsUseCase;
 
-  async execute(id: number, user: UserUpdateDTO): Promise<UserUpdateDTO> {
+  async execute(id: number, user: UserUpdateDTO): Promise<UserEntity> {
     await this.userIdExistsUseCase.execute(id);
     await this.userCheckDuplicateEmailUseCase.execute(user.email);
 

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { User } from '@prisma/client';
+import { UserEntity } from '../../entity/user.entity';
 
 export abstract class UserFindAllServiceInterface {
-  abstract execute(): Promise<User[]>;
+  abstract execute(): Promise<UserEntity[]>;
 }
